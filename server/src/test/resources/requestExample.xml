@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://oshcherbak.com/soap/api">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getEntityRequest>
+            <gs:id>2</gs:id>
+        </gs:getEntityRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

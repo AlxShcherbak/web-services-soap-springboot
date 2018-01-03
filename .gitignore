@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/
+webservicesboot.iml
+*.imi
+/server/target/
+/consumer/target/
+/consumer/consumer.iml
+/server/server.iml

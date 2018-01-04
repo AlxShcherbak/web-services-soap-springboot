@@ -1,24 +1,18 @@
 package com.oshcherbak;
 
 import com.oshcherbak.client.EntityClient;
+import com.oshcherbak.config.AppConfig;
 import com.oshcherbak.soap.api.GetEntityResponse;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
-@SpringBootApplication
 public class AppRunner {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppRunner.class, args);
-    }
+        AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        EntityClient client = (EntityClient) context.getBean(EntityClient.class);
 
-    @Bean
-    CommandLineRunner lookup(EntityClient entityClient) {
-        return args -> {
-            GetEntityResponse response = entityClient.response();
-            System.err.println(response.getEntity().toString());
-        };
+        GetEntityResponse response = client.response(1);
+        System.out.println(response.getEntity().toString());
     }
 }

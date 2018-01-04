@@ -1,6 +1,8 @@
 
 package com.oshcherbak.soap.api;
 
+import lombok.ToString;
+
 import javax.xml.bind.annotation.*;
 
 
@@ -34,6 +36,7 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement(
         name = "Entity"
 )
+@ToString
 public class Entity {
 
     protected int id;
